@@ -1,6 +1,6 @@
 {
   "name": "session-pulse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": { "name": "Nikita Efimov" },
   "description": "Полоса над промптом: метры prompt cache основного потока и лимитов 5ч и нед; за несколько минут до остывания кэша ниже кнопки Подогреть, Сжать, Скрыть.",
   "types": "./types/index.d.ts",

@@ -477,7 +477,7 @@ export const register: Register = on => {
     const rest = await next(e)
 
     return isModRow(rest) ? (
-      <Box flexDirection="column">
+      <Box flexDirection="column" rowGap="xs">
         {rest}
         {block}
       </Box>

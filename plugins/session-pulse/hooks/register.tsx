@@ -438,7 +438,7 @@ export const register: Register = (on, options) => {
           {meters.map((m, i) => (
             <Box key={m.id} flexDirection="row" alignItems="center" columnGap={i === 0 ? 2 : 1} flexShrink={0}>
               {i === 0 ? (
-                <Box width={6} flexShrink={0}>
+                <Box width={8} flexShrink={0}>
                   <Text dimColor>{m.label}</Text>
                 </Box>
               ) : (
@@ -489,7 +489,7 @@ export const register: Register = (on, options) => {
     if (d.busy !== null) {
       strip = (
         <Box flexDirection="row" alignItems="center" columnGap={2}>
-          <Box width={6} flexShrink={0}>
+          <Box width={8} flexShrink={0}>
             <Text dimColor>кэш</Text>
           </Box>
           <Text>{d.busy === 'warm' ? 'подогреваю...' : 'сжимаю контекст...'}</Text>
@@ -519,7 +519,7 @@ export const register: Register = (on, options) => {
 
       strip = (
         <Box flexDirection="row" alignItems="center" columnGap={2}>
-          <Box width={6} flexShrink={0}>
+          <Box width={8} flexShrink={0}>
             <Text dimColor>кэш</Text>
           </Box>
           <Box flexDirection="row" alignItems="center" columnGap={4} flexShrink={0}>
@@ -549,7 +549,7 @@ export const register: Register = (on, options) => {
 
     const recapRow = !hasRecap ? null : (
       <Box flexDirection="row" alignItems="center" columnGap={2}>
-        <Box width={6} flexShrink={0}>
+        <Box width={8} flexShrink={0}>
           <Text dimColor>где мы</Text>
         </Box>
         <Box flexGrow={1} flexShrink={1}>
@@ -567,7 +567,7 @@ export const register: Register = (on, options) => {
     const rest = await next(e)
     const rows = [recapRow, strip, isModRow(rest) ? rest : null, meterRow].filter(r => r !== null)
 
-    if (rows.length === 1 && meterRow !== null) return rest ? <Box flexDirection="column">{rest}{meterRow}</Box> : meterRow
+    if (rows.length === 1 && meterRow !== null) return rest ? <Box flexDirection="column" rowGap="xs">{rest}{meterRow}</Box> : meterRow
 
     return (
       <Box flexDirection="column">
