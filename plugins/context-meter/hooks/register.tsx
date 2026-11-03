@@ -477,9 +477,10 @@ export const register: Register = on => {
     const rest = await next(e)
 
     return isModRow(rest) ? (
+      // Строка контекста — над строками других модов (кэш и лимиты session-pulse).
       <Box flexDirection="column" rowGap="xs">
-        {rest}
         {block}
+        {rest}
       </Box>
     ) : (
       block
