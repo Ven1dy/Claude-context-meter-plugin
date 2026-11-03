@@ -210,8 +210,7 @@ async function afterCompact($: EngineInterface, before: number | undefined, save
 
   if (before === undefined || after === undefined) return refresh($)
 
-  // Строка в чате, модели не отправляется.
-  $.ui.log(`Сессия сжата: было ${tokens(before)} → стало ${tokens(after)}, сэкономлено ${tokens(Math.max(0, before - after))}`)
+  // Строку в чат не пишем; сжатие видно в панели истории и в полосе над промптом.
   await update($, turns, prev => [...prev, { text: '', before, after, compact: true as const }].slice(-TURNS_MAX))
 
   const next = { tokens: after, window: context.window, percent: context.window > 0 ? Math.round((after / context.window) * 100) : null }

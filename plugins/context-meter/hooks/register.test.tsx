@@ -59,7 +59,7 @@ test('after /compact the line compares /context before and after, and the band s
   expect(logs).toEqual([])
   await clock.advance(1000)
 
-  expect(logs).toEqual(['Сессия сжата: было 130K → стало 70K, сэкономлено 60K'])
+  expect(logs).toEqual([])
 
   const ui = await $.ui.mount({ ...BAND, surface: 'terminal' })
 
@@ -78,7 +78,7 @@ test('when /context never drops, the saving comes from the compaction itself', a
   expect(logs).toEqual([])
   await clock.advance(1000)
 
-  expect(logs).toEqual(['Сессия сжата: было 140K → стало 53K, сэкономлено 87K'])
+  expect(logs).toEqual([])
 })
 
 test('a compaction that saved nothing writes no line', async ($, on) => {
