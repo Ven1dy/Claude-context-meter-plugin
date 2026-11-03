@@ -34,6 +34,7 @@ curl -fsSL https://raw.githubusercontent.com/Ven1dy/Claude-context-meter-plugin/
 1. Находит Claude Code: в `PATH` или внутри расширения VS Code, Cursor или Windsurf. Если не находит, ставит его официальным установщиком.
 2. Подключает этот репозиторий как маркетплейс плагинов.
 3. Ставит все моды в пользовательскую область `~/.claude`. Терминал, VS Code и Desktop читают одну и ту же папку, поэтому моды появятся везде.
+4. Переносит настройки старой установки. Если моды раньше были подключены папками через `CLAUDE_CODE_PLUGIN_DIRS` или хуком в `~/.claude/settings.json`, их параметры из `pluginConfigs` (например, `ttlMinutes=60`) передаются в новую установку, а старые записи убираются, чтобы моды не загружались дважды. Чужие записи и другие хуки установщик не трогает. Прежний файл остаётся рядом копией `settings.json.bak-*`.
 
 После установки перезапустите Claude Code.
 
@@ -101,7 +102,7 @@ claude plugin uninstall context-meter                          # удалить 
 
 ## 📝 Заметки
 
-- Если раньше эти моды были подключены папками через `CLAUDE_CODE_PLUGIN_DIRS` в `~/.claude/settings.json`, уберите их оттуда, иначе каждый мод загрузится дважды.
+- Старое подключение модов папками установщик убирает сам (см. п. 4 выше). На macOS и Linux для этого нужен `python3`. Без него установщик только предупредит, и дубли придётся убрать из `settings.json` вручную.
 - **blast-radius** на Windows ищет Git Bash в `C:/Program Files/Git/usr/bin`, поэтому нужен Git for Windows.
 - **session-pulse** («Подогреть», «Где мы») и **handoff** отправляют настоящие запросы к модели и расходуют лимит.
 - **blast-radius** основан на моде из `anthropics/claude-code-playground` (Apache-2.0). Лицензия лежит в [plugins/blast-radius/LICENSE](plugins/blast-radius/LICENSE).
