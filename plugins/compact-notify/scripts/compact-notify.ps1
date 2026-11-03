@@ -14,14 +14,5 @@ if ($Toast) {
     exit 0
 }
 
-$trigger = 'manual'
-try { $trigger = ([Console]::In.ReadToEnd() | ConvertFrom-Json).trigger } catch {}
-$kind = if ($trigger -eq 'auto') { 'автоматичне' } else { 'ручне' }
-$msg = "Стиснення контексту запущено ($kind). Зачекайте, це може тривати до хвилини."
-
-Start-Process powershell.exe -WindowStyle Hidden -ArgumentList @(
-    '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', "`"$PSCommandPath`"", '-Toast', '-Text', "`"$msg`""
-)
-
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-@{ systemMessage = $msg } | ConvertTo-Json -Compress
+# Повідомлення про стиснення більше не виводиться ні в чат, ні як сповіщення Windows.
+exit 0
