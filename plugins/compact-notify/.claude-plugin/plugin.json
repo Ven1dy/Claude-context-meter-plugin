@@ -1,0 +1,6 @@
+{
+  "name": "compact-notify",
+  "version": "1.0.0",
+  "author": { "name": "Ven1dy" },
+  "description": "При запуске сжатия контекста (/compact или автоматическом) пишет строку в чат и показывает уведомление Windows. Только Windows."
+}

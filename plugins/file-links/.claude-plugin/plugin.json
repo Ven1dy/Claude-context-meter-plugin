@@ -1,0 +1,16 @@
+{
+  "name": "file-links",
+  "version": "1.0.0",
+  "author": { "name": "Nikita Efimov" },
+  "description": "Делает пути к файлам в ответах кликабельными: путь в обратных кавычках или битую ссылку превращает в markdown-ссылку относительно рабочей папки сессии (отрисовка, сохранённое сообщение не меняется).",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "linkStyle": {
+      "type": "string",
+      "title": "Стиль ссылок",
+      "description": "percent (по умолчанию, работает в панели Desktop): пробелы и скобки кодируются как %20, %28, %29. angle: путь в угловых скобках (панель Desktop их не понимает).",
+      "options": ["angle", "percent"],
+      "default": "percent"
+    }
+  }
+}

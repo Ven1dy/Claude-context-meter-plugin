@@ -1,0 +1,14 @@
+{
+  "name": "claude-context-meter-plugin",
+  "owner": { "name": "Ven1dy" },
+  "metadata": { "description": "Пак модов Claude Code: метр контекста, кэш и лимиты, handoff, защита от опасных команд, кликабельные пути, папка сессии, уведомление о сжатии." },
+  "plugins": [
+    { "name": "context-meter", "source": "./plugins/context-meter" },
+    { "name": "session-pulse", "source": "./plugins/session-pulse" },
+    { "name": "handoff", "source": "./plugins/handoff" },
+    { "name": "blast-radius", "source": "./plugins/blast-radius" },
+    { "name": "file-links", "source": "./plugins/file-links" },
+    { "name": "session-folder", "source": "./plugins/session-folder" },
+    { "name": "compact-notify", "source": "./plugins/compact-notify" }
+  ]
+}

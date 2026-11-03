@@ -1,0 +1,1 @@
+{ "name": "context-meter", "version": "0.4.3", "author": { "name": "Ven1dy" }, "description": "Context fill above the prompt: growth per message with a pane: breakdown by category and history per message, a compaction line in chat, a warning at 30%; /compact and /clear buttons", "types": "./types/index.d.ts" }

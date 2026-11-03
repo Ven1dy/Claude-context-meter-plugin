@@ -1,0 +1,7 @@
+{
+  "name": "session-folder",
+  "version": "1.0.0",
+  "author": { "name": "Nikita Efimov" },
+  "description": "Подвал Claude Code: папка сессии (путь от домашней папки, например ~/work/site) и ветка git; предупреждение, если основная рабочая папка сменилась после cd.",
+  "types": "./types/index.d.ts"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "session-pulse",
+  "version": "1.0.0",
+  "author": { "name": "Nikita Efimov" },
+  "description": "Полоса над промптом: метры prompt cache основного потока и лимитов 5ч и нед; за несколько минут до остывания кэша ниже кнопки Подогреть, Сжать, Скрыть.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "ttlMinutes": {
+      "type": "number",
+      "title": "TTL кэша, минут",
+      "description": "Время жизни prompt cache: 5 при стандартном TTL, 60 если у аккаунта 1-часовой TTL (если не уверен, оставь 5)",
+      "default": 5
+    }
+  }
+}
